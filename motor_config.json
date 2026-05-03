@@ -1,0 +1,100 @@
+{
+  "motors": {
+    "1": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": true,
+      "gear_ratio": 1.0
+    },
+    "2": {
+      "kp": 300.0,
+      "kd": 1.5,
+      
+      
+      "flipped": true,
+      "gear_ratio": 1.0
+    },
+    "3": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": true,
+      "gear_ratio": 1.5
+    },
+    "4": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": true,
+      "gear_ratio": 1.0
+    },
+    "5": {
+      "kp": 300.0,
+      "kd": 1.5,
+      
+      
+      "flipped": true,
+      "gear_ratio": 1.0
+    },
+    "6": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": true,
+      "gear_ratio": 1.5
+    },
+    "7": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": false,
+      "gear_ratio": 1.0
+    },
+    "8": {
+      "kp": 300.0,
+      "kd": 1.5,
+      
+      
+      "flipped": false,
+      "gear_ratio": 1.0
+    },
+    "9": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": false,
+      "gear_ratio": 1.5
+    },
+    "10": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": false,
+      "gear_ratio": 1.0
+    },
+    "11": {
+      "kp": 300.0,
+      "kd": 1.5,
+      
+      
+      "flipped": false,
+      "gear_ratio": 1.0
+    },
+    "12": {
+      "kp": 400.0,
+      "kd": 1.5,
+      
+      
+      "flipped": false,
+      "gear_ratio": 1.5
+    }
+  }
+}
