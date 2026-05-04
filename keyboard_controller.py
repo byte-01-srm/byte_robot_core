@@ -28,7 +28,7 @@ import threading
 import ctypes
 import requests
 import keyboard     # pip install keyboard  (needs sudo on Linux)
-
+# import config.robot_config as robot_config
 
 def _enable_ansi_stdout() -> None:
     """Enable ANSI cursor/colors on Windows Conhost (reduces scroll-spam redraw)."""
@@ -59,8 +59,11 @@ def _configure_stdout_utf8() -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────────────────────────────────────
-PI_HOST       = "http://192.168.1.100:8000"   # ← change to your Pi's IP
-STATE_URL     = f"{PI_HOST}/state"
+SOCKET_HOST = "10.127.205.34"
+SOCKET_PORT = "8000"
+
+PI_HOST       = f"http://{SOCKET_HOST}:{SOCKET_PORT}"   # ← change to your Pi's IP
+STATE_URL     = f"{PI_HOST}/change-state"
 POST_TIMEOUT  = 0.5     # seconds per request before giving up
 POLL_HZ       = 30      # UI + state-check refresh rate
 
@@ -103,7 +106,7 @@ _net_log: list[str] = []      # rolling list of last 4 POST results (oldest → 
 def _post(state: str) -> None:
     """Runs in a background thread. Never called directly."""
     try:
-        r = requests.post(STATE_URL, json={"state": state}, timeout=POST_TIMEOUT)
+        r = requests.post(STATE_URL, json={"new_state": state, "sender_id":"keyboard_controller"}, timeout=POST_TIMEOUT)
         tag = "✓" if r.status_code == 200 else f"✗ {r.status_code}"
     except requests.exceptions.ConnectionError:
         tag = "✗ no connection"
